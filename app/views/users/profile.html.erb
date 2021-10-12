@@ -155,7 +155,7 @@
     <% end %>
 
     <% if @profile_user && @profile_user.reset_key.nil? && logged_in_as(['admin', 'moderator']) && (@profile_user.role == "basic" || @profile_user.role == "moderator") %>
-      <a href="/admin/force/reset/<%= @profile_user.id %>" class="btn btn-outline-secondary btn-block">Reset User Password</a>
+      <a href="/admin/force/reset/<%= @profile_user.id %>" class="btn btn-outline-secondary btn-block"><%= translation('users.profile.reset_password') %></a>
     <% end %>
 
     <hr />
@@ -193,7 +193,7 @@
               <h5 class="modal-title" id="socialModal"><%= translation('users.profile.link_social_media') %></h5>
             </div>
             <div class="modal-body">
-              <label for="social-name">Enter Your Social Media User name like twitter:publiclab or instagram:publiclab</label>
+              <label for="social-name"><%= translation('users.profile.enter_social_media') %></label>
             <input type="text" class="form-control" id="social-name" placeholder="instagram:publiclab">
             </div>
             <div class="modal-footer">
